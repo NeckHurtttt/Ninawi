@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BRASA · Calendario de quemas</title>
+<title>NINAWI · Aviso del fuego</title>
 <meta name="description" content="Calendario de quemas de Bolivia con focos de calor MODIS y VIIRS armonizados (NASA FIRMS, 2001-2025).">
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
 <link rel="stylesheet" href="estilo.css">
@@ -12,7 +12,7 @@
 <header>
   <div class="marca">
     <svg viewBox="0 0 32 32" width="34" height="34" aria-hidden="true"><path d="M16 2c2 6 9 9 9 17a9 9 0 0 1-18 0c0-5 3-7 4-11 1 3 2 4 4 5-1-4 0-8 1-11z" fill="var(--fuego)"/><path d="M16 15c1 3 5 4 5 8a5 5 0 0 1-10 0c0-3 2-4 3-6 0 2 1 2 2 3 0-2 0-3 0-5z" fill="var(--brasa)"/></svg>
-    <div><h1>BRASA</h1><p data-en="Bolivia fire calendar · harmonized MODIS + VIIRS · 2001–2025">Calendario de quemas de Bolivia · MODIS + VIIRS armonizados · 2001–2025</p></div>
+    <div><h1>NINAWI</h1><p data-en="“Fire warning” in Quechua · Bolivia fire calendar · harmonized MODIS + VIIRS">“Aviso del fuego” en quechua · calendario de quemas de Bolivia · MODIS + VIIRS</p></div>
   </div>
   <div class="cabecera-der">
     <span id="hoy"></span>
@@ -65,7 +65,7 @@
     <div class="tarjeta">
       <h2 data-en="Why harmonization matters">Por qué hay que armonizar</h2>
       <div id="anual" class="scroll-x"></div>
-      <p class="nota" data-en="VIIRS (375 m, since 2012) sees about <b id=&quot;factor&quot;></b> times more hotspots than MODIS (1 km). Mixed naively, fires would seem to explode in 2012. BRASA puts everything on one scale: <b>VIIRS-equivalent hotspots</b>.">VIIRS (375 m, desde 2012) ve unas <b id="factor"></b> veces más focos que MODIS (1 km). Sin corregir, parecería que los incendios se dispararon en 2012. BRASA lleva todo a la misma escala: <b>focos equivalentes VIIRS</b>.</p>
+      <p class="nota" data-en="VIIRS (375 m, since 2012) sees about <b id=&quot;factor&quot;></b> times more hotspots than MODIS (1 km). Mixed naively, fires would seem to explode in 2012. NINAWI puts everything on one scale: <b>VIIRS-equivalent hotspots</b>.">VIIRS (375 m, desde 2012) ve unas <b id="factor"></b> veces más focos que MODIS (1 km). Sin corregir, parecería que los incendios se dispararon en 2012. NINAWI lleva todo a la misma escala: <b>focos equivalentes VIIRS</b>.</p>
     </div>
 
     <div class="tarjeta">

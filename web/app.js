@@ -1,4 +1,4 @@
-/* BRASA · calendario de quemas armonizado MODIS + VIIRS */
+/* NINAWI · calendario de quemas armonizado MODIS + VIIRS */
 'use strict';
 
 const $ = (s) => document.querySelector(s);
@@ -365,7 +365,7 @@ function descargarCSV() {
     filas.push([A0 + a, w + 1, d, h, s.M[j], a < S0 ? '' : s.V[j], s.H[j].toFixed(1), s.raro[j]].join(','));
   }
   const b = new Blob([filas.join('\n')], { type: 'text/csv' }); const u = URL.createObjectURL(b);
-  const a = document.createElement('a'); a.href = u; a.download = `brasa-${sel.nombre.replace(/[^\wáéíóúñ]+/gi, '-').toLowerCase()}.csv`; a.click(); URL.revokeObjectURL(u);
+  const a = document.createElement('a'); a.href = u; a.download = `ninawi-${sel.nombre.replace(/[^\wáéíóúñ]+/gi, '-').toLowerCase()}.csv`; a.click(); URL.revokeObjectURL(u);
 }
 
 /* ---------- enlace ---------- */

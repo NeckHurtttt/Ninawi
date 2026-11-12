@@ -1,10 +1,12 @@
-# 🔥 BRASA · Calendario de quemas de Bolivia
+# 🔥 NINAWI · Aviso del fuego
+
+*Ninawi* viene del quechua **nina willay**, "aviso del fuego". Es un calendario y una alerta de quemas para Bolivia.
 
 **NASA Space Apps Challenge 2026 · Harmonization of MODIS and VIIRS Hot Spots · Santa Cruz de la Sierra**
 
-BRASA junta 25 años de focos de calor de los satélites **MODIS** (2001–2025) y **VIIRS** (2012–hoy) en una sola escala y los convierte en un **calendario de quemas** para cualquier zona de Bolivia: cuándo empieza la temporada, cuándo es el pico, qué años fueron raros y si lo que pasa esta semana es normal.
+NINAWI junta 25 años de focos de calor de los satélites **MODIS** (2001–2025) y **VIIRS** (2012–hoy) en una sola escala y los convierte en un **calendario de quemas** para cualquier zona de Bolivia: cuándo empieza la temporada, cuándo es el pico, qué años fueron raros y si lo que pasa esta semana es normal.
 
-> *English:* BRASA harmonizes 25 years of MODIS and VIIRS active-fire hotspots for Bolivia into one consistent, VIIRS-equivalent record and turns it into a burning-activity calendar for any area of interest, with critical periods, anomalies and a daily early-warning check. Switch language with the **EN** button.
+> *English:* NINAWI (Quechua for “fire warning”) harmonizes 25 years of MODIS and VIIRS active-fire hotspots for Bolivia into one consistent, VIIRS-equivalent record and turns it into a burning-activity calendar for any area of interest, with critical periods, anomalies and a daily early-warning check. Switch language with the **EN** button.
 
 ## Qué hace
 
