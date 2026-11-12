@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BRASA · Calendario de quemas</title>
+<meta name="description" content="Calendario de quemas de Bolivia con focos de calor MODIS y VIIRS armonizados (NASA FIRMS, 2001-2025).">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+  <div class="marca">
+    <svg viewBox="0 0 32 32" width="34" height="34" aria-hidden="true"><path d="M16 2c2 6 9 9 9 17a9 9 0 0 1-18 0c0-5 3-7 4-11 1 3 2 4 4 5-1-4 0-8 1-11z" fill="var(--fuego)"/><path d="M16 15c1 3 5 4 5 8a5 5 0 0 1-10 0c0-3 2-4 3-6 0 2 1 2 2 3 0-2 0-3 0-5z" fill="var(--brasa)"/></svg>
+    <div><h1>BRASA</h1><p data-en="Bolivia fire calendar · harmonized MODIS + VIIRS · 2001–2025">Calendario de quemas de Bolivia · MODIS + VIIRS armonizados · 2001–2025</p></div>
+  </div>
+  <div class="cabecera-der">
+    <span id="hoy"></span>
+    <button id="idioma" type="button" aria-label="Idioma / Language">EN</button>
+  </div>
+</header>
+
+<main>
+  <section class="col-mapa">
+    <div class="tarjeta">
+      <div class="controles">
+        <label><span data-en="Area">Zona</span>
+          <select id="zona"></select>
+        </label>
+        <button id="dibujar" type="button" data-en="✏️ Draw area">✏️ Dibujar zona</button>
+        <label><span data-en="Map year">Año en el mapa</span>
+          <select id="anio-mapa"></select>
+        </label>
+      </div>
+      <div id="mapa" role="application" aria-label="Mapa de focos de calor"></div>
+      <p class="nota" id="ayuda-mapa" data-en="Pick a department from the list, click a cell, or draw your own area with two clicks (corners). Each cell is 0.25° (~27 km).">Elige un departamento en la lista, toca un cuadro o dibuja tu zona con dos clics (esquinas). Cada cuadro mide 0,25° (~27 km).</p>
+      <div class="leyenda" id="leyenda-mapa"></div>
+    </div>
+
+    <div class="tarjeta" id="alerta"></div>
+  </section>
+
+  <section class="col-datos">
+    <div class="resumen" id="resumen"></div>
+
+    <div class="tarjeta">
+      <div class="titulo-tarjeta">
+        <h2 data-en="Fire calendar">Calendario de quemas</h2>
+        <div class="seg" id="modo">
+          <button data-m="h" class="on" type="button" data-en="Harmonized">Armonizado</button>
+          <button data-m="m" type="button" data-en="MODIS only">Solo MODIS</button>
+          <button data-m="v" type="button" data-en="VIIRS only">Solo VIIRS</button>
+        </div>
+      </div>
+      <p class="nota" data-en="Each row is a year and each square a week. <span class=&quot;chip raro&quot;></span> = abnormal week (above 90% of years). Before 2012 values are estimated from MODIS (≈).">Cada fila es un año y cada cuadro, una semana. <span class="chip raro"></span> = semana fuera de lo normal (más que el 90 % de los años). Antes de 2012 la cifra se estima con MODIS.</p>
+      <div id="calendario" class="scroll-x"></div>
+    </div>
+
+    <div class="tarjeta">
+      <h2><span data-en="When does it burn?">¿Cuándo se quema?</span> <small id="anio-sel-txt"></small></h2>
+      <div id="clima" class="scroll-x"></div>
+      <p class="nota" data-en="Band = normal range (10th–90th percentile of years). Grey line = median. Orange line = selected year. Shaded = critical season.">Banda = rango normal (10 % a 90 % de los años). Línea = mediana. Línea naranja = año elegido. Zona sombreada = temporada crítica.</p>
+    </div>
+
+    <div class="tarjeta">
+      <h2 data-en="Why harmonization matters">Por qué hay que armonizar</h2>
+      <div id="anual" class="scroll-x"></div>
+      <p class="nota" data-en="VIIRS (375 m, since 2012) sees about <b id=&quot;factor&quot;></b> times more hotspots than MODIS (1 km). Mixed naively, fires would seem to explode in 2012. BRASA puts everything on one scale: <b>VIIRS-equivalent hotspots</b>.">VIIRS (375 m, desde 2012) ve unas <b id="factor"></b> veces más focos que MODIS (1 km). Sin corregir, parecería que los incendios se dispararon en 2012. BRASA lleva todo a la misma escala: <b>focos equivalentes VIIRS</b>.</p>
+    </div>
+
+    <div class="tarjeta">
+      <h2 data-en="Method and validation">Método y validación</h2>
+      <div id="metodo"></div>
+    </div>
+  </section>
+</main>
+
+<footer data-en="Data: NASA FIRMS (MODIS C6.1, VIIRS S-NPP / NOAA-20 375 m), geoBoundaries. Built for NASA Space Apps Challenge 2026 · Santa Cruz de la Sierra, Bolivia.">
+  Datos: NASA FIRMS (MODIS C6.1, VIIRS S-NPP / NOAA-20 375 m), límites geoBoundaries. Hecho para NASA Space Apps Challenge 2026 · Santa Cruz de la Sierra.
+</footer>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
