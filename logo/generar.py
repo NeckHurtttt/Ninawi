@@ -128,19 +128,27 @@ def guardar(nombre, contenido):
     open(f'{OUT}/{nombre}.svg', 'w').write(contenido)
 
 
-guardar('ninawi-icono', svg(512, 512, icono(256, 256, 220, OSCURO), OSCURO))
-guardar('ninawi-icono-transparente', svg(512, 512, icono(256, 256, 220, OSCURO), OSCURO, False))
-guardar('ninawi-logo', svg(600, 640, icono(300, 262, 220, OSCURO) + marca(300, 556, 78, OSCURO, 'middle')
-                           + lema(300, 600, 19, OSCURO, 'AVISO DEL FUEGO', 'middle'), OSCURO))
-guardar('ninawi-logo-claro', svg(600, 640, icono(300, 262, 220, CLARO) + marca(300, 556, 78, CLARO, 'middle')
-                                 + lema(300, 600, 19, CLARO, 'AVISO DEL FUEGO', 'middle'), CLARO))
-guardar('ninawi-horizontal', svg(980, 280, icono(140, 140, 116, OSCURO) + marca(296, 158, 92, OSCURO)
-                                 + lema(300, 206, 21, OSCURO, 'AVISO DEL FUEGO · BOLIVIA')
-                                 + f'<text x="300" y="240" style="font:500 15px {MONO};letter-spacing:3px;fill:#6b5d53">MODIS + VIIRS · NASA FIRMS · 2001–2026</text>', OSCURO))
 def favicon(tema):
     l, nx, ny = llama(256, 470, 430, tema['fondo'])
     return svg(512, 512, l + mira(nx, ny, 62, tema['mira']), tema)
 
 
-guardar('ninawi-favicon', favicon(OSCURO))
-print('ok')
+def main():
+    guardar('ninawi-icono', svg(512, 512, icono(256, 256, 220, OSCURO), OSCURO))
+    guardar('ninawi-icono-transparente', svg(512, 512, icono(256, 256, 220, OSCURO), OSCURO, False))
+    guardar('ninawi-logo', svg(600, 640, icono(300, 262, 220, OSCURO) + marca(300, 556, 78, OSCURO, 'middle')
+                               + lema(300, 600, 19, OSCURO, 'AVISO DEL FUEGO', 'middle'), OSCURO))
+    guardar('ninawi-logo-claro', svg(600, 640, icono(300, 262, 220, CLARO) + marca(300, 556, 78, CLARO, 'middle')
+                                     + lema(300, 600, 19, CLARO, 'AVISO DEL FUEGO', 'middle'), CLARO))
+    guardar('ninawi-horizontal', svg(980, 280, icono(140, 140, 116, OSCURO) + marca(296, 158, 92, OSCURO)
+                                     + lema(300, 206, 21, OSCURO, 'AVISO DEL FUEGO · BOLIVIA')
+                                     + f'<text x="300" y="240" style="font:500 15px {MONO};letter-spacing:3px;fill:#6b5d53">MODIS + VIIRS · NASA FIRMS · 2001–2026</text>', OSCURO))
+
+
+    guardar('ninawi-favicon', favicon(OSCURO))
+    print('ok')
+
+
+
+if __name__ == "__main__":
+    main()
